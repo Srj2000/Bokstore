@@ -1,0 +1,37 @@
+{% extends 'main/base.html'%}
+{% block title%}Welcome To Online Book Store{% endblock %}
+{% block body %}
+
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center ">
+    
+    <h1>Your Orders</h1>
+   </div>
+   <div class="album py-5 bg-light container">
+    <div class="container row">
+        {% if not status %}
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center ">
+    
+          <h1>{{msg}}</h1>
+         </div>
+        {% else %}
+  {% for i in list %}
+     
+    
+          <div class="card mx-4 my-4" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="Image Loading...">
+            <div class="card-body">
+              <h5 class="card-title">{{i.item}}</h5>
+              
+              <p class="card-text"> Date: {{i.date}}</p>
+              <p class="card-text">Price: {{i.price}}</p>
+               
+              
+              </div></div>
+              
+           
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+   
+{% endblock %}

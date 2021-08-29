@@ -1,0 +1,18 @@
+{% extends 'main/base.html'%}
+{% block title%}Welcome To Online Book Store{% endblock %}
+{% block body %}
+
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center ">
+    
+    <h1>Your Customer Detail</h1>
+   </div>
+   <div class="album py-5 bg-light container">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Buyer Name:  {{detail.user}}</li>
+        <li class="list-group-item">Book Name: {{detail.item}}</li>
+        <li class="list-group-item">Price:  {{detail.price}}</li>
+      
+      </ul>
+      </div>
+   
+{% endblock %}

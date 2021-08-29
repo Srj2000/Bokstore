@@ -1,0 +1,28 @@
+{% extends 'main/base.html'%}
+{% block title%}Welcome To Online Book Store{% endblock %}
+{% block body %}
+<div class="container my-4">
+  <h1>Customer Login</h1>
+<form class="my-4" method="POST", action="/customer/" >
+  {% csrf_token %}
+  <div class="col-md-12">
+    <label for="uname" class="form-label">Username</label>
+    <input type="text" class="form-control" id="uname" name="uname" required>
+  </div>
+  <div class="col-md-12">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4" name="psk" required>
+  </div>
+  
+  <div class="col-12">
+    <button type="submit" class=" my-4 btn btn-primary">Sign In</button>
+  </div>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href={% url "customersignup" %}>Create Account ?</a>
+      </li></ul>
+  </form>
+  
+  
+</div>
+{% endblock %}

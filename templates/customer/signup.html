@@ -1,0 +1,60 @@
+{% extends 'main/base.html'%}
+{% block title%}Welcome To Online Book Store{% endblock %}
+{% block body %}
+<div class="container my-4">
+  <form class="row" method="POST" action="/customer/csignup">
+    {% csrf_token %}
+      <h1>Customer Sign Up</h1>
+      <div class="col-md-6">
+          <label for="fname" class="form-label"> Name</label>
+          <input type="text" class="form-control" id="fname" name="name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="uname" class="form-label"> Username</label>
+          <input type="text" class="form-control" id="uname" name="username" required>
+        </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" name="email" required>
+      </div>
+      <div class="col-6">
+        <label for="mobile" class="form-label">Mobile</label>
+        <input type="number" class="form-control" id="mobile" name="mobile"  required>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="psk1" required>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"> Confirm Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="psk2" required>
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="add1" required>
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" required placeholder="Apartment, studio, or floor" name="add2">
+      </div>
+    
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" name="city" required>
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <input type="text" class="form-control" id="inputState" name="state" required>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip" name="zip" required>
+      </div>
+    
+      <div class="col-12">
+        <button type="submit" class=" my-4 btn btn-primary">Sign Up</button>
+      </div>
+    </form></div>
+   
+ 
+{% endblock %}

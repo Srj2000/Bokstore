@@ -1,0 +1,43 @@
+{% extends 'main/base.html'%}
+{% block title%}Welcome To Online Book Store{% endblock %}
+{% block body %}
+<div class="px-4 pt-5 my-4 text-center border-bottom">
+   
+    <div class="col-lg-6 mx-auto">
+      <h1 class="">Welcome To Book Store</h1>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center ">
+        <p class="lead mb-4">Here You can buy thousand books.Find your books and enjoy your study.</p><br>
+       
+      </div>
+      <a href={% url 'myorder' %}> <button type="button" class="btn btn-success btn-lg px-4">YOUR ORDERS</button></a>
+    </div></div>
+
+
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center ">
+    
+  <h1>LIST OF BOOKS</h1>
+ </div>
+ <div class="album py-5 bg-light container">
+  <div class="container row">
+{% for i in book %}
+   
+  
+        <div class="card mx-4 my-4" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="Image Loading...">
+          <div class="card-body">
+            <h5 class="card-title">{{i.book_name}}</h5>
+            <p class="card-text">{{i.category}}</p>
+            <p class="card-text">{{i.description}}</p>
+             <p class="card-text ">Price: {{i.price }}</p>
+            {% if i.status == '1' %}
+            <a href='/customer/buybook/{{i.id}}' class="btn btn-outline-success">Buy</a>
+            {% else%}
+            <a href='#' class="btn btn-outline-danger">Sold Out</a>
+            {% endif %}
+            </div></div>
+         
+        {% endfor %}
+      </div>
+    </div>
+   
+{% endblock %}
